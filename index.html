@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>idea1</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+</head>
+<body>
+    <div class="page">
+        <section class="movie">
+
+                <article class="container" id="movie1">
+                    <div class="warpper">
+                        <img src="img/movie/zmID.jpg" alt="">
+                        <span>致<br>命<br>I<br>D</span>
+                        <p>电影的剧情结构严谨，情节一气呵成，结尾部分出人意料。是悬疑惊悚系列必看电影</p>
+                    </div>
+                </article>
+                <article class="container" id="movie2">
+                    <div class="warpper">
+                        <img src="img/movie/dmkj.jpg" alt="">
+                        <span>盗<br>梦<br>空<br>间</span>
+
+                    </div>
+                </article>
+                <article class="container" id="movie3">
+                    <div class="warpper">
+                        <img src="img/movie/127hours.jpg" alt="">
+                        <span>127<br>小<br>时</span>
+                    </div>
+                </article>
+
+        </section>
+        <section class="book">
+
+                <article class="container" id="book1"></article>
+                <article class="container" id="book2"></article>
+                <article class="container" id="book3"></article>
+
+        </section>
+    </div>
+<script type="text/javascript">
+window.onload = function() {
+    for (var i = 1; i < 100; i++) {
+        $(".container").eq(i-1).fadeIn(i*500);
+        $(".container").eq(i-1).animate({width:'25%', height: '350'});
+    };
+};
+/*切换*/
+$("section.book").click(function() {
+    $(this).animate({left:'5%'},500);
+    $("section.movie").animate({left:'-90%'},500);
+});
+$("section.movie").click(function() {
+    $(this).animate({left:'0'},500);
+    $("section.book").animate({left:'95%'},500);
+});
+/*mouseout mouseover 会触发冒泡事件 mousenter mouseleave 不会触发冒泡事件*/
+$(".container").mouseenter(function() {
+    $(event.target).find("img").css("-webkit-filter","blur(5px)");
+    $(event.target).find("span").animate({left:'10px'} ,400);
+    $(event.target).find("p").slideDown(400);
+});
+$(".container").mouseleave(function() {
+    $(event.target).find("img").css("-webkit-filter","blur(0px)");
+    $(event.target).find("p").slideUp(400);
+    $(event.target).find("span").animate({left:'220px'}, 400)
+});
+</script>
+</body>
+</html>
