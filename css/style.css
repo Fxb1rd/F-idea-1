@@ -2,7 +2,7 @@
 * @Author: fxb1rd
 * @Date:   2017-05-08 19:36:48
 * @Last Modified by:   Marte
-* @Last Modified time: 2017-05-09 00:50:44
+* @Last Modified time: 2017-05-09 16:54:51
 */
 * {padding: 0; margin:0;}
 body {
@@ -19,28 +19,29 @@ body {
     margin-top: 50px;
 }
 .movie {
-    width: 95%;
+    width: 96%;
     height: 550px;
     background-image: url(../img/bg1.jpg);
     position: absolute;
     left: 0;
 }
 .book {
-    width: 95%;
+    width: 96%;
     height: 550px;
     background-image: url(../img/bg2.jpg);
     position: absolute;
-    left: 95%;
+    left: 96%;
 }
 .warpper {
-    width: 80%;
+    width: 260px;
     height: 80%;
     float: left;
-    margin: 10%;
+    margin: 30px;
     overflow: hidden;
     position: relative;
 }
 .warpper img {
+    float: left;
     width: 192px;
     height: 280px;
 }
@@ -60,11 +61,10 @@ body {
     display: none;
 }
 .container {
-    display: none;
     width: 0;
     height: 0;
     float: left;
-    margin-left: 75px;
+    margin-left: 53px;
     margin-top: 100px;
     border-radius: 5px;
     background: rgba(255,255,255,0.2);
