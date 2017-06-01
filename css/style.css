@@ -170,6 +170,7 @@ header {
 .book .container:last-child {background-color: #F30404;}
 /****************me******************/
 .ME {
+    display: none;
     width: 1366px;
     height: 550px;
     position: absolute;
@@ -332,10 +333,11 @@ header {
 }
 /***************个人信息*****************/
 .personinfo {
-    padding: 50px;
+    display: none;
+    padding: 40px;
     width: 150px;
     height: 150px;
-    border-radius: 125px;
+    border-radius: 120px;
     text-align: center;
 }
 .personinfo span {
@@ -343,29 +345,32 @@ header {
     position: relative;
     line-height: 56px;
 }
+.personinfo li {list-style: none;}
 .personinfo1 {
     float: left;
     margin-left: 330px;
     margin-top: -180px;
-    background-color: #11B17C;
+    background-color: #8B2BF1;
 }
 .personinfo2 {
     float: left;
     margin-left: 30px;
     margin-top: 50px;
-    background-color: #11B17C;
+    background-color: #FA840B;
 }
 .personinfo3 {
     float: left;
     margin-left: 30px;
     margin-top: -200px;
-    background-color: #11B17C;
+    background-color: #37FB11;
+    font-size: 12px;
 }
 .personinfo4 {
     float: left;
-    margin-left: 240px;
-    margin-top: -180px;
+    margin-left: 250px;
+    margin-top: -190px;
     background-color: #11B17C;
+    font-size: 12px;
 }
 /*************页脚********************/
 footer {
@@ -374,4 +379,6 @@ footer {
     background-color: #3d9eff;
     position: absolute;
     bottom: 0;
+    text-align: center;
+    clear: all;
 }

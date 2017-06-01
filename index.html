@@ -9,7 +9,7 @@
 <body>
     <div class="page">
     <header class="">
-        <span class="btn" id="logo">网站小样</span>
+        <span class="btn" id="logo">DEMO</span>
         <nav class="h-nav">
             <ul>
                 <li><a href="#" >电影</a></li><!--
@@ -52,7 +52,7 @@
         </section>
         <section class="book">
                 <div class="title_warpper">
-                    <span class="b_title">电&nbsp;&nbsp;影</span>
+                    <span class="b_title">小&nbsp;&nbsp;说</span>
                 </div>
                 <article class="container" id="book1">
                     <div class="warpper">
@@ -111,21 +111,21 @@
                 </ul>
             </article>
             <article class="personinfo personinfo3">
-                <span>相关链接:</span>
-                <ul>
-                    <li>此demo地址：</li>
-                    <li>静态页面demo：</li>
-                </ul>
+                <span>相关链接:</span><br>
+                此demo地址：<br><a href="https://github.com/Fxb1rd/F-idea-1">https://github.com/Fxb1rd/F-idea-1 </a><br>
+                静态页面：<br><a href="https://fxb1rd.github.io/demo">https://fxb1rd.github.io/demo</a>
             </article>
             <article class="personinfo personinfo4">
-                <ul>
-                    <li>听命令的方块：</li>
-                    <li>简历：http://fxb1ld.deercv.com</li>
+                <br><br>
+                听命令的方块：<br><a href="https://fxb1rd.github.io/demo2">https://fxb1rd.github.io/demo2</a><br>
+                在线简历：<br> <a href="http://fxb1ld.deercv.com">http://fxb1ld.deercv.com</a>
 
-                </ul>
             </article>
         </section>
         <footer>
+        <br>
+            <p>数据图片来自百度百科，豆瓣网，亚马逊，侵删。</p>
+            <a href="https://github.com/Fxb1rd">&copy;Fxb1rd</a>
         </footer>
     </div>
 
@@ -148,6 +148,16 @@ $(".h-nav a").eq(1).click(function() {
     $("section.book").animate({left:'4%'},500);
     $("section.movie").animate({left:'-92%'},500);
 });
+////个人信息
+$(".h-nav a").eq(2).click(function() {
+    $("section.ME").slideToggle(400);
+    $(".ME article").eq(0).fadeIn(800);
+    $(".ME article").eq(1).fadeIn(1200);
+    $(".ME article").eq(2).fadeIn(1600);
+    $(".ME article").eq(3).fadeIn(2000);
+});
+
+//////////////////////////
 $("section.book").click(function() {
     for (var i = 4; i <= 6; i++) {
         $(".container").eq(i-1).delay(300*(i-3)).animate({width:'340px', height: '350'},300);
@@ -163,16 +173,10 @@ $("section.movie").click(function() {
 //delay() 控制动画执行顺序
 //stop（）防止动画多次触发
 $(".container").mouseenter(function() {
-    //$(this).find("img").eq(0).css("-webkit-filter","blur(10px)");
-    //$(this).find("img").eq(1).delay(200).slideDown(200);
-    //$(this).find("span").stop(true).animate({left:'10px'} ,200);
     $(this).find("p").stop(true).delay(400).slideDown(200);
 });
 $(".container").mouseleave(function() {
     $(".container").delay(200).animate({width:'340px'},400).find("span").delay(600).stop(true).fadeIn(200);
-    //$(this).find("img").eq(0).css("-webkit-filter","blur(0px)");
-    //$(this).find("img").eq(1).slideUp(200);
-    //$(this).find("span").delay(200).animate({left:'220px'}, 200);
     $(this).find("p").slideUp(200);
     Open();
 });
