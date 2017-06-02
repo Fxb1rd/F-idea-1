@@ -3,7 +3,7 @@ body {
     background-color: #3d9eff;
 }
 .page {
-    width: 1366px;
+    width: 1364px;
     height: 670px;
     position: relative;
     overflow: hidden;
@@ -245,6 +245,7 @@ header {
 .floor2_child1 {animation: action7 9s linear infinite; background-color: #E4DD0C;}
 .floor2_child2 {animation: action8 9s linear infinite;}
 .floor2_child3 {animation: action9 9s linear infinite;}
+/**抵抗文字倾斜*/
 .floor3_child2 span {
         transform: rotate(240deg);
     -ms-transform: rotate(240deg);       /* IE 9 */
