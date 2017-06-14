@@ -7,7 +7,25 @@
     <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
 </head>
 <body>
-    <div class="page">
+<div class="page">
+    <div class="load-warpper">
+    <div class="loading">
+        <div class="out-circle"></div>
+        <div class="out-cover"></div>
+        <div class="in-circle1">
+            <div class="bottom"></div>
+            <div class="middle"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="in-circle2">
+            <div class="bottom"></div>
+            <div class="middle"></div>
+            <div class="cover"></div>
+        </div>
+    </div>
+    <span>加载中...</span>
+    <button>点击进入</button>
+    </div>
     <header class="">
         <span class="btn" id="logo">DEMO</span>
         <nav class="h-nav">
@@ -17,7 +35,8 @@
              --><li><a href="#">@我</a></li>
             </ul>
         </nav>
-    </header><!-- /header -->
+    </header><!-- header -->
+    <!-- 电影部分 -->
         <section class="movie">
                 <div class="title_warpper">
                     <span class="m_title">电&nbsp;&nbsp;影</span>
@@ -50,6 +69,7 @@
                        hideous nature of the show, you can let you forget to breathe!</p>
                 </article>
         </section>
+        <!-- book部分 -->
         <section class="book">
                 <div class="title_warpper">
                     <span class="b_title">小&nbsp;&nbsp;说</span>
@@ -79,6 +99,7 @@
                 </article>
 
         </section>
+        <!-- 简历 -->
         <section class="ME">
             <div class="ability">
                 <div class="floor3"></div>
@@ -112,34 +133,43 @@
             </article>
             <article class="personinfo personinfo3">
                 <span>相关链接:</span><br>
-                此demo地址：<br><a href="https://github.com/Fxb1rd/F-idea-1">https://github.com/Fxb1rd/F-idea-1 </a><br>
-                静态页面：<br><a href="https://fxb1rd.github.io/demo">https://fxb1rd.github.io/demo</a>
+                此demo地址：<br><a href="https://github.com/Fxb1rd/F-idea-1" target="_blank">https://github.com/Fxb1rd/F-idea-1 </a><br>
+                静态页面：<br><a href="https://fxb1rd.github.io/demo" target="_blank">https://fxb1rd.github.io/demo</a>
             </article>
             <article class="personinfo personinfo4">
                 <br><br>
-                方块（js作品）：<br><a href="https://fxb1rd.github.io/demo2">https://fxb1rd.github.io/demo2</a><br>
-                响应式页面：<br> <a href="https://fxb1rd.github.io/demo3">https://fxb1rd.github.io/demo3</a>
+                方块（js作品）：<br><a href="https://fxb1rd.github.io/demo2" target="_blank">https://fxb1rd.github.io/demo2</a><br>
+                响应式页面：<br> <a href="https://fxb1rd.github.io/demo3" target="_blank">https://fxb1rd.github.io/demo3</a>
 
             </article>
         </section>
+        <!-- footer -->
         <footer>
         <br>
             <p>数据图片来自百度百科，豆瓣网，亚马逊，侵删。</p>
-            <a href="https://github.com/Fxb1rd">&copy;Fxb1rd</a>
+            <a href="https://github.com/Fxb1rd" target="_blank">&copy;Fxb1rd</a>
         </footer>
     </div>
 
 <script type="text/javascript">
+/////等待资源加载
+window.onload = function() {
+    $(".load-warpper button").fadeIn(800);
+};
+$(".load-warpper button").click(function() {
+    $(".load-warpper").slideUp(200);
+    Open();
+});
 function Open() {
     for (var i = 1; i <= 3; i++) {
-        $(".container").eq(i-1).delay(200*i).animate({width:'340px', height: '350'},300);
+        $(".container").eq(i-1).delay(400*i).animate({width:'340px', height: '350'},300);
     };
 };
-Open();
 /*切换*/
 $(".h-nav a").eq(0).click(function() {
     $("section.movie").animate({left:'0'},500);
     $("section.book").animate({left:'96%'},500);
+    $("section.ME").slideUp(200);
 });
 $(".h-nav a").eq(1).click(function() {
     for (var i = 4; i <= 6; i++) {
@@ -147,6 +177,7 @@ $(".h-nav a").eq(1).click(function() {
     };
     $("section.book").animate({left:'4%'},500);
     $("section.movie").animate({left:'-92%'},500);
+    $("section.ME").slideUp(200);
 });
 ////个人信息
 $(".h-nav a").eq(2).click(function() {
@@ -234,3 +265,4 @@ $(".container").eq(5).mouseenter(function() {
 </script>
 </body>
 </html>
+
