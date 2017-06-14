@@ -4,10 +4,120 @@ body {
 }
 .page {
     width: 1364px;
-    height: 670px;
+    height: 635px;
     position: relative;
     overflow: hidden;
     margin: auto;
+}
+/****************loading******************/
+.load-warpper {
+    width: 1366px;
+    height: 635px;
+    position: absolute;
+    top: 0px;
+    background-color: #00F2FF;
+    z-index: 10;
+}
+.load-warpper span {
+    color: #fff;
+    font-size: 36px;
+    font-weight: 600;
+    position: relative;
+    top: 220px;
+    left: 615px;
+}
+.load-warpper button {
+    display: none;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    outline: none;
+    background-color: #00F2FF;
+    font-size: 36px;
+    font-weight: 600;
+    position: relative;
+    top: 220px;
+    left: 465px;
+}
+.load-warpper button:hover { background-color: #fff; color: #00F2FF;}
+/************旋转loading动画*************/
+.loading {
+    width: 128px;
+    height: 128px;
+    position: relative;
+    top: 200px;
+    left: 618px;
+    z-index: 10;
+}
+.out-circle {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 92px;
+    height: 92px;
+    border: 8px solid #4b86db;
+    border-radius: 54px;
+    }
+.out-cover {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 0;
+    height: 0;
+    border: 54px solid transparent;
+    border-left-color: #00F2FF;/*****根据背景颜色改变******/
+    animation: spin 800ms infinite linear;
+}
+.in-circle1, .in-circle2 {
+    width: 76px;
+    height: 76px;
+    border-radius: 80px;
+    overflow: hidden;
+    position: absolute;
+    left: 26px;
+    top: 26px;
+}
+.in-circle1 {
+    opacity: 1;
+    background-color: #89abdd;
+    animation: hide 1.6s steps(1, end) infinite;
+}
+.in-circle2 {
+    opacity: 0;
+    background-color: #4b86db;
+    animation: show 1.6s steps(1, end) infinite;
+}
+.bottom, .middle, .cover {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+}
+.bottom {
+    background-color: #4b86db;
+    transform-origin: right center;
+    animation: spin 800ms infinite linear; left: 0; top: 0;
+}
+.middle {
+    background-color: #4b86db;
+    animation: hide 800ms steps(1, end) infinite; left: 50%; top: 0; opacity: 1;
+}
+.cover {
+    background-color: #89abdd;
+    animation: show 800ms steps(1, end) infinite; left: 0; top: 0; opacity: 0;
+}
+.in-circle2 .bottom, .in-circle2 .middle { background-color: #89abdd; }
+.in-circle2 .cover { background-color: #4b86db; }
+@keyframes spin {
+  0%   { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+@keyframes hide {
+  0%        { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+@keyframes show {
+  0%        { opacity: 0; }
+  50%, 100% { opacity: 1; }
 }
 /****************页眉*****************/
 header {
@@ -108,6 +218,7 @@ header {
     text-shadow: rgba(255,255,255,0.5) 0 5px 6px, rgba(0,0,0,0.2) 1px 3px 3px;
     -webkit-background-clip: text;
 }
+/*******************************/
 .warpper {
     width: 265px;
     height: 80%;
@@ -236,15 +347,15 @@ header {
     line-height: 40px;
     text-align: center;
 }
-.floor3_child1 {animation: action1 9s linear infinite;}
-.floor3_child2 {animation: action2 9s linear infinite;}
-.floor3_child3 {animation: action3 9s linear infinite; background-color: #E4DD0C;}
-.floor3_child4 {animation: action4 9s linear infinite;}
+.floor3_child1 {animation: action1 9s linear infinite; background-color: #46C1D7;}
+.floor3_child2 {animation: action2 9s linear infinite; background-color: #F1EA10;}
+.floor3_child3 {animation: action3 9s linear infinite; background-color: #25CC68;}
+.floor3_child4 {animation: action4 9s linear infinite; background-color: #F55B24;}
 .floor3_child5 {animation: action5 9s linear infinite; background-color: #E4DD0C;}
-.floor3_child6 {animation: action6 9s linear infinite;}
-.floor2_child1 {animation: action7 9s linear infinite; background-color: #E4DD0C;}
-.floor2_child2 {animation: action8 9s linear infinite;}
-.floor2_child3 {animation: action9 9s linear infinite;}
+.floor3_child6 {animation: action6 9s linear infinite; background-color: #FA2F0E;}
+.floor2_child1 {animation: action7 9s linear infinite; background-color: #A715E9;}
+.floor2_child2 {animation: action8 9s linear infinite; background-color: #0940EA;}
+.floor2_child3 {animation: action9 9s linear infinite; background-color: #4AC081;}
 /**抵抗文字倾斜*/
 .floor3_child2 span {
         transform: rotate(240deg);
@@ -382,4 +493,8 @@ footer {
     bottom: 0;
     text-align: center;
     clear: all;
+}
+a {
+    text-decoration: none;
+    color: #fff;
 }
